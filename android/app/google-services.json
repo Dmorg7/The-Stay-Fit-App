@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "686315618280",
+    "firebase_url": "https://stay-fit-app-da043.firebaseio.com",
+    "project_id": "stay-fit-app-da043",
+    "storage_bucket": "stay-fit-app-da043.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686315618280:android:8f9b7e4994a1b4bf5d6e5d",
+        "android_client_info": {
+          "package_name": "com.stayfitapp.stay_fit_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686315618280-ih14lanufuahueuas7ehld2l1pdiiral.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe07vLBnVdJbOxTiXwmkwMfIVHlnv_FoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686315618280-ih14lanufuahueuas7ehld2l1pdiiral.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

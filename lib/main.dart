@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stay_fit_app/login.dart';
 import 'auth.dart';
 import './login.dart';
+import 'root_page.dart';
 
 
 void main() => runApp(MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'The Stay Fit App',
       theme: ThemeData(primaryColor: Color(0xFF0277BD)),
-      home: new LoginPage(auth: new Auth())
+      home: new RootPage(auth: new Auth())
     );
   }
 }

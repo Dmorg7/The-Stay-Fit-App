@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stay_fit_app/login.dart';
-
+import 'auth.dart';
 import './login.dart';
 
 
@@ -10,8 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'The Stay Fit App',
       theme: ThemeData(primaryColor: Color(0xFF0277BD)),
-      home: new LoginPage(),
+      home: new LoginPage(auth: new Auth())
     );
   }
 }

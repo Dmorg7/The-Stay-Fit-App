@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:stay_fit_app/home.dart';
 import 'login.dart';
 import 'auth.dart';
+import './home.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({this.auth});
@@ -20,7 +22,7 @@ class _RootPageState extends State<RootPage> {
     super.initState();
     widget.auth.currentUser().then((userId) {
       setState(() {
-        //authStatus = userId == null ? AuthStatus.notsSignedIn : AuthStatus.signedIn;
+        authStatus = userId == null ? AuthStatus.notsSignedIn : AuthStatus.signedIn;
       });
     });
   }
@@ -29,6 +31,12 @@ class _RootPageState extends State<RootPage> {
   void _signedIn() {
     setState(() {
       authStatus = AuthStatus.signedIn;
+    });
+  }
+
+  void _signedOut() {
+    setState(() {
+      authStatus = AuthStatus.notsSignedIn;
     });
   }
 
@@ -41,10 +49,9 @@ class _RootPageState extends State<RootPage> {
           onSignedIn: _signedIn,
         );
       case AuthStatus.signedIn:
-        return new Scaffold(
-          body: new Container(
-            child: new Text('Welcome'),
-          )
+        return new HomePage(
+          auth: widget.auth,
+          onSignedOut: _signedOut,
         );
     }
   }

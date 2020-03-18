@@ -1,41 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:stay_fit_app/profile.dart';
 import 'package:stay_fit_app/trainers.dart';
 import 'package:stay_fit_app/workouts.dart';
-import 'auth.dart';
 
-// Log Out Button
+import 'home.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({this.auth, this.onSignedOut});
+class ProfilePage extends StatefulWidget {
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
 
-  final BaseAuth auth;
-  final VoidCallback onSignedOut;
 
-  void _signedOut() async {
-    try {
-      await auth.signOut();
-      onSignedOut();
-    } catch (e) {
-      print(e);
-    }
-  }
+// Side Navigation Drawer
 
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Home'),
-        actions: <Widget>[
-          new FlatButton(
-              child: new Text('Logout',
-                  style: new TextStyle(fontSize: 17.0, color: Colors.lime)),
-              onPressed: _signedOut)
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Profile"),
       ),
-
-      // Side Navigation Drawer
-
+      body: Center(
+        child: FlutterLogo(size: 100.0,),
+      ),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[

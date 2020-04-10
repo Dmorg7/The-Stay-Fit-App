@@ -9,19 +9,150 @@ class WorkoutPage extends StatefulWidget {
   _WorkoutPageState createState() => _WorkoutPageState();
 }
 
+// Main Body
 
 // Side Navigation Drawer
 
 class _WorkoutPageState extends State<WorkoutPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Workouts"),
       ),
-      body: Center(
-        child: FlutterLogo(size: 100.0,),
+
+      // body
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/banner.jpg'),
+                  fit: BoxFit.cover
+                )
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomLeft,
+                    colors: [
+                      Colors.lime[100].withOpacity(.8),
+                      Colors.lime[100].withOpacity(.1),
+                    ]
+                  )
+                ),
+
+              ),
+            ),
+
+            SizedBox(height: 30,),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("Core Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                  SizedBox(height: 20,),
+                  Container(
+                    height: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        makeItem(image: 'assets/images/dom1.jpg', title: 'Core Workout 1'),
+                        makeItem(image: 'assets/images/core.png', title: 'Core Workout 2'),
+                        makeItem(image: 'assets/images/dom1.jpg', title: 'Core Workout 3'),
+                        makeItem(image: 'assets/images/core.png', title: 'Core Workout 4'),
+                      ],
+                    ),
+                  ),
+                  
+                  SizedBox(height: 30,),
+                  Container(
+                    //padding: EdgeInsets.symmetric(horizontal: 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text("Cardio Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                        SizedBox(height: 20,),
+                        Container(
+                          height: 200,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              makeItem(image: 'assets/images/dom2.jpg', title: 'Cardio Workout 1'),
+                              makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 2'),
+                              makeItem(image: 'assets/images/dom2.jpg', title: 'Cardio Workout 3'),
+                              makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 4'),
+                            ],
+                          ),
+                        ),
+
+                        SizedBox(height: 30,),
+                        Container(
+                          //padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text("Weights Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                              SizedBox(height: 20,),
+                              Container(
+                                height: 200,
+                                child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: <Widget>[
+                                    makeItem(image: 'assets/images/dom3.jpg', title: 'Weights Workout 1'),
+                                    makeItem(image: 'assets/images/weights.png', title: 'Weigths Workout 2'),
+                                    makeItem(image: 'assets/images/dom3.jpg', title: 'Weights Workout 3'),
+                                    makeItem(image: 'assets/images/weights.png', title: 'Weights Workout 4'),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+
+                        SizedBox(height: 30,),
+                        Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text("Weight Loss Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                              SizedBox(height: 20,),
+                              Container(
+                                height: 200,
+                                child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: <Widget>[
+                                    makeItem(image: 'assets/images/dom4.jpg', title: 'Weight Loss Workout 1'),
+                                    makeItem(image: 'assets/images/weightloss.png', title: 'Weigth Loss Workout 2'),
+                                    makeItem(image: 'assets/images/dom4.jpg', title: 'Weight Loss Workout 3'),
+                                    makeItem(image: 'assets/images/weightloss.png', title: 'Weight Loss Workout 4'),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+
+                        SizedBox(height: 30,),
+
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
+
+
+
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -53,43 +184,80 @@ class _WorkoutPageState extends State<WorkoutPage> {
                     )
                   ],
                 ))),
-            CustomListTile(Icons.home, 'Home', () => {
-              Navigator.of(context).pop(),
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => HomePage()
-              ))
-            }),
-
-            CustomListTile(Icons.fitness_center, 'Workouts', () => {
-              Navigator.of(context).pop(),
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => WorkoutPage()
-              ))
-            }),
-            
-            CustomListTile(Icons.map, 'Trainers', () => {
-              Navigator.of(context).pop(),
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => TrainersPage()
-              ))
-            }),
-
-            CustomListTile(Icons.person, 'Profile', () => {
-              Navigator.of(context).pop(),
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ProfilePage()
-              ))
-            }),
-
-            CustomListTile(Icons.close, 'Close', () => Navigator.of(context).pop()),
+            CustomListTile(
+                Icons.home,
+                'Home',
+                () => {
+                      Navigator.of(context).pop(),
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage()))
+                    }),
+            CustomListTile(
+                Icons.fitness_center,
+                'Workouts',
+                () => {
+                      Navigator.of(context).pop(),
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => WorkoutPage()))
+                    }),
+            CustomListTile(
+                Icons.map,
+                'Trainers',
+                () => {
+                      Navigator.of(context).pop(),
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => TrainersPage()))
+                    }),
+            CustomListTile(
+                Icons.person,
+                'Profile',
+                () => {
+                      Navigator.of(context).pop(),
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ProfilePage()))
+                    }),
+            CustomListTile(
+                Icons.close, 'Close', () => Navigator.of(context).pop()),
           ],
         ),
       ),
     );
   }
+
+  Widget makeItem({image, title}) {
+    return AspectRatio(
+      aspectRatio: 1 / 1,
+      child: Container(
+        margin: EdgeInsets.only(right: 15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(image),
+            fit: BoxFit.cover
+          )
+        ),
+        child: Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              colors: [
+                Colors.blue.withOpacity(.1),
+                Colors.blue.withOpacity(.1),
+              ]
+            )
+          ),
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),),
+          )
+        ),
+      ),
+    );
+  }
+
 }
-
-
 
 // Custom Navigation Drawer Tile
 
@@ -136,3 +304,6 @@ class CustomListTile extends StatelessWidget {
     );
   }
 }
+
+
+

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stay_fit_app/trainers.dart';
 import 'package:stay_fit_app/workouts.dart';
-
 import 'home.dart';
 
 class ProfilePage extends StatefulWidget {

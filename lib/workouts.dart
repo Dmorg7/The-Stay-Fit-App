@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stay_fit_app/profile.dart';
 import 'package:stay_fit_app/trainers.dart';
+import 'package:stay_fit_app/workoutvid1.dart';
 
 import 'home.dart';
 
@@ -50,103 +51,155 @@ class _WorkoutPageState extends State<WorkoutPage> {
               ),
             ),
 
-            SizedBox(height: 30,),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text("Core Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
-                  SizedBox(height: 20,),
-                  Container(
-                    height: 200,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: <Widget>[
-                        makeItem(image: 'assets/images/dom1.jpg', title: 'Core Workout 1'),
-                        makeItem(image: 'assets/images/core.png', title: 'Core Workout 2'),
-                        makeItem(image: 'assets/images/dom1.jpg', title: 'Core Workout 3'),
-                        makeItem(image: 'assets/images/core.png', title: 'Core Workout 4'),
-                      ],
-                    ),
-                  ),
-                  
-                  SizedBox(height: 30,),
-                  Container(
-                    //padding: EdgeInsets.symmetric(horizontal: 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text("Cardio Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
-                        SizedBox(height: 20,),
-                        Container(
-                          height: 200,
-                          child: ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: <Widget>[
-                              makeItem(image: 'assets/images/dom2.jpg', title: 'Cardio Workout 1'),
-                              makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 2'),
-                              makeItem(image: 'assets/images/dom2.jpg', title: 'Cardio Workout 3'),
-                              makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 4'),
-                            ],
-                          ),
-                        ),
+            SizedBox(height: 20,),
 
-                        SizedBox(height: 30,),
-                        Container(
-                          //padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text("Weights Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
-                              SizedBox(height: 20,),
-                              Container(
-                                height: 200,
-                                child: ListView(
-                                  scrollDirection: Axis.horizontal,
-                                  children: <Widget>[
-                                    makeItem(image: 'assets/images/dom3.jpg', title: 'Weights Workout 1'),
-                                    makeItem(image: 'assets/images/weights.png', title: 'Weigths Workout 2'),
-                                    makeItem(image: 'assets/images/dom3.jpg', title: 'Weights Workout 3'),
-                                    makeItem(image: 'assets/images/weights.png', title: 'Weights Workout 4'),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
+            //Weights Workouts Section
 
-                        SizedBox(height: 30,),
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text("Weight Loss Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
-                              SizedBox(height: 20,),
-                              Container(
-                                height: 200,
-                                child: ListView(
-                                  scrollDirection: Axis.horizontal,
-                                  children: <Widget>[
-                                    makeItem(image: 'assets/images/dom4.jpg', title: 'Weight Loss Workout 1'),
-                                    makeItem(image: 'assets/images/weightloss.png', title: 'Weigth Loss Workout 2'),
-                                    makeItem(image: 'assets/images/dom4.jpg', title: 'Weight Loss Workout 3'),
-                                    makeItem(image: 'assets/images/weightloss.png', title: 'Weight Loss Workout 4'),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-
-                        SizedBox(height: 30,),
-
-                      ],
-                    ),
-                  )
-                ],
+            GestureDetector(
+              onTap: () {
+               Navigator.push(
+                 context, MaterialPageRoute(
+                   builder: (context) => Workoutvid1(),
+                 )
+               ); 
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("Weights Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                    SizedBox(height: 20,),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          makeItem(image: 'assets/images/dom1.jpg', title: 'Weights Workout 1'),
+                          makeItem(image: 'assets/images/core.png', title: 'Weights Workout 2'),
+                          makeItem(image: 'assets/images/dom1.jpg', title: 'Weights Workout 3'),
+                          makeItem(image: 'assets/images/core.png', title: 'Weights Workout 4'),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
-            )
+            ),
+
+            SizedBox(height: 30,),
+
+            // Core Workouts Section
+
+            GestureDetector(
+              onTap: () {
+               Navigator.push(
+                 context, MaterialPageRoute(
+                   builder: (context) => Workoutvid1(),
+                 )
+               ); 
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("Core Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                    SizedBox(height: 20,),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          makeItem(image: 'assets/images/dom2.jpg', title: 'Core Workout 1'),
+                          makeItem(image: 'assets/images/weights.png', title: 'Core Workout 2'),
+                          makeItem(image: 'assets/images/dom2.jpg', title: 'Core Workout 3'),
+                          makeItem(image: 'assets/images/weights.png', title: 'Core Workout 4'),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            
+
+            SizedBox(height: 30,),
+
+            // Weightloss Workouts Section
+
+            GestureDetector(
+              onTap: () {
+               Navigator.push(
+                 context, MaterialPageRoute(
+                   builder: (context) => Workoutvid1(),
+                 )
+               ); 
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("Weightloss Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                    SizedBox(height: 20,),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          makeItem(image: 'assets/images/dom3.jpg', title: 'Weightloss Workout 1'),
+                          makeItem(image: 'assets/images/weightloss.png', title: 'Weightloss Workout 2'),
+                          makeItem(image: 'assets/images/dom3.jpg', title: 'Weightloss Workout 3'),
+                          makeItem(image: 'assets/images/weightloss.png', title: 'Weightloss Workout 4'),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+
+            SizedBox(height: 30,),
+
+            // Cardio Workouts Section
+
+            GestureDetector(
+              onTap: () {
+               Navigator.push(
+                 context, MaterialPageRoute(
+                   builder: (context) => Workoutvid1(),
+                 )
+               ); 
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("Cardio Workouts", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                    SizedBox(height: 20,),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          makeItem(image: 'assets/images/dom4.jpg', title: 'Cardio Workout 1'),
+                          makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 2'),
+                          makeItem(image: 'assets/images/dom4.jpg', title: 'Cardio Workout 3'),
+                          makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 4'),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 30,)
+            
+
           ],
         ),
       ),

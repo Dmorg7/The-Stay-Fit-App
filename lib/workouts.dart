@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:stay_fit_app/profile.dart';
 import 'package:stay_fit_app/trainers.dart';
 import 'package:stay_fit_app/workoutvid1.dart';
-
+import 'package:stay_fit_app/workoutvid2.dart';
+import 'package:stay_fit_app/workoutvid3.dart';
+import 'package:stay_fit_app/workoutvid4.dart';
+import 'package:stay_fit_app/workoutvid5.dart';
+import 'package:stay_fit_app/workoutvid6.dart';
+import 'package:stay_fit_app/workoutvid7.dart';
+import 'package:stay_fit_app/workoutvid8.dart';
 import 'home.dart';
 
 class WorkoutPage extends StatefulWidget {
@@ -51,19 +57,11 @@ class _WorkoutPageState extends State<WorkoutPage> {
               ),
             ),
 
-            SizedBox(height: 20,),
+            SizedBox(height: 20),
 
             //Weights Workouts Section
 
-            GestureDetector(
-              onTap: () {
-               Navigator.push(
-                 context, MaterialPageRoute(
-                   builder: (context) => Workoutvid1(),
-                 )
-               ); 
-              },
-              child: Container(
+            Container(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,31 +73,75 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          makeItem(image: 'assets/images/dom1.jpg', title: 'Weights Workout 1'),
-                          makeItem(image: 'assets/images/core.png', title: 'Weights Workout 2'),
-                          makeItem(image: 'assets/images/dom1.jpg', title: 'Weights Workout 3'),
-                          makeItem(image: 'assets/images/core.png', title: 'Weights Workout 4'),
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid1(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom1.jpg', title: 'Weights Workout 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid5(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/weights.png', title: 'Weights Workout 2'),
+                            ),
+                          ),  
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid1(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom1.jpg', title: 'Weights Workout 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid5(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/weights.png', title: 'Weights Workout 2'),
+                            ),
+                          ),
+                          
+                          
                         ],
                       ),
                     )
                   ],
                 ),
-              ),
             ),
 
-            SizedBox(height: 30,),
+
+            SizedBox(height: 30),
 
             // Core Workouts Section
 
-            GestureDetector(
-              onTap: () {
-               Navigator.push(
-                 context, MaterialPageRoute(
-                   builder: (context) => Workoutvid1(),
-                 )
-               ); 
-              },
-              child: Container(
+            Container(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,32 +153,75 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          makeItem(image: 'assets/images/dom2.jpg', title: 'Core Workout 1'),
-                          makeItem(image: 'assets/images/weights.png', title: 'Core Workout 2'),
-                          makeItem(image: 'assets/images/dom2.jpg', title: 'Core Workout 3'),
-                          makeItem(image: 'assets/images/weights.png', title: 'Core Workout 4'),
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid2(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom4.jpg', title: 'Core Workout 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid6(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/core.png', title: 'Core Workout 2'),
+                            ),
+                          ),  
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid2(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom4.jpg', title: 'Core Workout 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid6(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/core.png', title: 'Core Workout 2'),
+                            ),
+                          ),
+                          
+                          
                         ],
                       ),
                     )
                   ],
                 ),
-              ),
             ),
             
 
-            SizedBox(height: 30,),
+            SizedBox(height: 30),
 
             // Weightloss Workouts Section
 
-            GestureDetector(
-              onTap: () {
-               Navigator.push(
-                 context, MaterialPageRoute(
-                   builder: (context) => Workoutvid1(),
-                 )
-               ); 
-              },
-              child: Container(
+            Container(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,32 +233,76 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          makeItem(image: 'assets/images/dom3.jpg', title: 'Weightloss Workout 1'),
-                          makeItem(image: 'assets/images/weightloss.png', title: 'Weightloss Workout 2'),
-                          makeItem(image: 'assets/images/dom3.jpg', title: 'Weightloss Workout 3'),
-                          makeItem(image: 'assets/images/weightloss.png', title: 'Weightloss Workout 4'),
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid3(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom2.jpg', title: 'Weightloss Workout 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid7(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/weightloss.png', title: 'Weightloss Workout 2'),
+                            ),
+                          ),  
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid3(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom2.jpg', title: 'Weightloss Workout 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid7(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/weightloss.png', title: 'Weightloss Workout 2'),
+                            ),
+                          ),
+                          
+                          
                         ],
                       ),
                     )
                   ],
                 ),
-              ),
             ),
+              
+    
 
-
-            SizedBox(height: 30,),
+            SizedBox(height: 30),
 
             // Cardio Workouts Section
 
-            GestureDetector(
-              onTap: () {
-               Navigator.push(
-                 context, MaterialPageRoute(
-                   builder: (context) => Workoutvid1(),
-                 )
-               ); 
-              },
-              child: Container(
+            Container(
                 padding: EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,25 +314,80 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: <Widget>[
-                          makeItem(image: 'assets/images/dom4.jpg', title: 'Cardio Workout 1'),
-                          makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 2'),
-                          makeItem(image: 'assets/images/dom4.jpg', title: 'Cardio Workout 3'),
-                          makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 4'),
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid4(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom3.jpg', title: 'Cardio Workout 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid8(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 2'),
+                            ),
+                          ),  
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid4(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom3.jpg', title: 'Cardio Workout 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Workoutvid8(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workout 2'),
+                            ),
+                          ),
+                          
+                          
                         ],
                       ),
                     )
                   ],
                 ),
-              ),
             ),
 
-            SizedBox(height: 30,)
-            
+
+            SizedBox(height: 20),
+
 
           ],
         ),
       ),
 
+
+
+      // Side Navigation Drawer
 
 
       drawer: Drawer(

@@ -34,6 +34,201 @@ class HomePage extends StatelessWidget {
         ],
       ),
 
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/homebanner.png'),
+                  fit: BoxFit.cover
+                )
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomLeft,
+                    colors: [
+                      Colors.lime[100].withOpacity(.8),
+                      Colors.lime[100].withOpacity(.1),
+                    ]
+                  )
+                ),
+
+              ),
+            ),
+
+            SizedBox(height: 30),
+
+            //Weights Workouts Section
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("Workouts Categories", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                    SizedBox(height: 20,),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => WorkoutPage(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/dom4.jpg', title: 'Core Workouts'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => WorkoutPage(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/weights.png', title: 'Weights Workout'),
+                            ),
+                          ),  
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => WorkoutPage(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/cardio.png', title: 'Cardio Workouts'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => WorkoutPage(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/weightloss.png', title: 'Weightloss Workouts'),
+                            ),
+                          ),
+                          
+                          
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+            ),
+
+
+            SizedBox(height: 30),
+
+            // Core Workouts Section
+
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text("Personal Trainers", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.lime[700], fontSize: 25),),
+                    SizedBox(height: 20,),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => TrainersPage(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/trainer1.jpg', title: 'Trainer 1'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => TrainersPage(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/trainer2.jpg', title: 'Trainer 2'),
+                            ),
+                          ),  
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => TrainersPage(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/trainer3.jpg', title: 'Trainer 3'),
+                            ),
+                          ),  
+                          
+
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => TrainersPage(),
+                                )
+                              ); 
+                            },
+                            child: Container(
+                              child: makeItem(image: 'assets/images/trainer4.jpg', title: 'Trainer 4'),
+                            ),
+                          ),
+                          
+                          
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+            ),
+            
+
+            SizedBox(height: 30),
+
+
+          ],
+        ),
+      ),
+
+
       // Side Navigation Drawer
 
       drawer: Drawer(
@@ -102,6 +297,39 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+Widget makeItem({image, title}) {
+    return AspectRatio(
+      aspectRatio: 1 / 1,
+      child: Container(
+        margin: EdgeInsets.only(right: 15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(image),
+            fit: BoxFit.cover
+          )
+        ),
+        child: Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              colors: [
+                Colors.blue.withOpacity(.1),
+                Colors.blue.withOpacity(.1),
+              ]
+            )
+          ),
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),),
+          )
+        ),
+      ),
+    );
+  }
 
 
 

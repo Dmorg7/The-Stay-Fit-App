@@ -24,13 +24,6 @@ class _TrainersPageState extends State<TrainersPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Personal Trainers"),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(FontAwesomeIcons.search),
-              onPressed: () {
-                //
-              }),
-        ],
       ),
       body: Stack(
         children: <Widget>[
